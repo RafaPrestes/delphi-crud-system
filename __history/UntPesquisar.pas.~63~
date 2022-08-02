@@ -87,7 +87,6 @@ begin
 
   // executando a Thread
   ThreadTeste.Cria();
-
 end;
 
 procedure TForm1.DBGrid1CellClick(Column: TColumn);
@@ -104,19 +103,31 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
+// LOCAL DE EXECUÇÃO
+  sLocal := ExtractFilePath(Application.ExeName);
+
   dmCadastro.cdsPesquisaPrestador.Close;
 end;
 
 procedure TForm1.relPrestadorUnidadeClick(Sender: TObject);
+var
+SQL : string;
 begin
-  dmCadastro.qryRelatorioPorUnidade.Close;
-  dmCadastro.qryRelatorioPorUnidade.Open();
-  dmCadastro.cdsRelatorioPorUnidade.Close;
-  dmCadastro.cdsRelatorioPorUnidade.Open();
-  dmCadastro.frxReportSelecionarPorUnidade.ShowReport();
+  dmCadastro.cdsPesquisaPrestador.Close;
+  dmCadastro.cdsPesquisaPrestador.Open;
 
-//  dmCadastro.frxReportSelecionarPorUnidade.LoadFromFile
-//    (sLocal + '/Rave/FR_SELECIONAR_TODOS_PRESTADORES.fr3');
+  SQL := 'select * from tab_prestador';
+
+  dmCadastro.cdsPesquisaPrestador.Close;
+  dmCadastro.qryPesquisaPrestador.SQL.Clear;
+  dmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+  dmCadastro.cdsPesquisaPrestador.Open;
+
+  dmCadastro.frxReportSelecionarPorUnidade.LoadFromFile
+    (sLocal + '/Rave/FR_SELECIONAR_TODOS_PRESTADORES.fr3');
+
+  dmCadastro.frxReportSelecionarPorUnidade.PrepareReport();
+  dmCadastro.frxReportSelecionarPorUnidade.ShowReport();
 end;
 
 end.
