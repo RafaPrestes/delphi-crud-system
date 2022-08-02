@@ -1,0 +1,85 @@
+unit Thread;
+
+interface
+
+uses
+  Classes, Windows, Messages, SysUtils, Variants, Graphics, Controls, Forms,
+  Dialogs, DB, Grids, DBGrids, StdCtrls, Mask, DBCtrls, ExtCtrls, Menus,
+  ComCtrls;
+
+type
+  ThreadTeste = class(TThread)
+  private
+    { Private declarations }
+  protected
+    procedure Execute; override;
+  public
+    procedure pesquisar();
+    constructor cria();
+  end;
+
+implementation
+uses UntPesquisar, UntDmCadastro;
+
+constructor ThreadTeste.cria;
+begin
+  Create(false);
+  FreeOnTerminate := true;
+end;
+
+procedure ThreadTeste.Execute;
+begin
+  with Form1 do
+  begin
+    ProgressBar1.Position := 0;
+    repeat
+    sleep(50);
+    ProgressBar1.Position := ProgressBar1.Position + 1;
+    until
+    ProgressBar1.Position = ProgressBar1.Max;
+    if ProgressBar1.Position = ProgressBar1.Max then
+    begin
+      ProgressBar1.Position := 0;
+    end;
+    Synchronize(pesquisar);
+  end;
+end;
+
+
+procedure ThreadTeste.pesquisar;
+var
+SQL : string;
+begin
+ //condição para diferenciar o tipo selecionado do combobox
+  if Form1.ComboBox1.ItemIndex = 1 then
+    begin
+      dmCadastro.qryPesquisaPrestador.SQL.Clear;
+      SQL := 'select * from tab_prestador where nm_prestador like' + QuotedStr(Form1.edPesquisa.Text + '%');
+      DmCadastro.cdsPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.SQL.Clear;
+      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+      DmCadastro.cdsPesquisaPrestador.Open;
+    end
+  else if Form1.ComboBox1.ItemIndex = 0 then
+    begin
+      dmCadastro.qryPesquisaPrestador.SQL.Clear;
+      SQL := 'select * from tab_prestador where cd_prestador like ' + QuotedStr(Form1.edPesquisa.Text + '%');
+      DmCadastro.cdsPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.SQL.Clear;
+      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+      DmCadastro.cdsPesquisaPrestador.Open;
+    end
+  else if Form1.ComboBox1.ItemIndex = -1 then
+    begin
+      dmCadastro.qryPesquisaPrestador.SQL.Clear;
+      SQL := 'select * from tab_prestador';
+      DmCadastro.cdsPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.SQL.Clear;
+      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+      DmCadastro.cdsPesquisaPrestador.Open;
+    end;
+end;
+end.

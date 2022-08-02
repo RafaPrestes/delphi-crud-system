@@ -1,0 +1,81 @@
+unit UntCadastro;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, DB, Grids, DBGrids, StdCtrls, Mask, DBCtrls;
+
+type
+  TfrmCadastro = class(TForm)
+    btnInserir: TButton;
+    ds: TDataSource;
+    Panel1: TPanel;
+    edNome: TEdit;
+    edRG: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure btnInserirClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastro: TfrmCadastro;
+
+implementation
+
+uses UntDmCadastro, UntEditarMorador;
+
+{$R *.dfm}
+
+procedure TfrmCadastro.btnInserirClick(Sender: TObject);
+    var
+    SQL, nome, unidade, RG : String;
+    codigo : Integer;
+begin
+  dmCadastro.cdsPesquisaPrestador.Close;
+  dmCadastro.cdsPesquisaPrestador.Open;
+  dmCadastro.cdsPesquisaPrestador.Append;
+
+//  dmCadastro.dsCadastroNM_PRESTADOR := edNome.Text;
+
+//  dmCadastro.cdsPrestador.CreateDataSet;
+
+ if DmCadastro.cdsPesquisaPrestador.State in [dsInsert] then
+  begin
+  if edRG.Text <> '' then
+  begin
+      dmCadastro.cdsPesquisaPrestadorNM_PRESTADOR.Value := edNome.Text;
+  dmCadastro.cdsPesquisaPrestadorNR_RG.Value := edRG.Text;
+
+  dmCadastro.cdsPesquisaPrestador.Post;
+  ShowMessage('Inserido com Sucesso!');
+  dmCadastro.cdsPesquisaPrestador.ApplyUpdates(0);
+  edNome.Text := '';
+  edRG.Text := '';
+  dmCadastro.cdsPesquisaPrestador.Close;
+  dmCadastro.cdsPesquisaPrestador.Open;
+  end
+  else
+  begin
+    ShowMessage('Campo Vazio, favor Preencher!');
+    edRG.SetFocus;
+  end;
+
+  dmCadastro.cdsPesquisaPrestador.Close;
+  dmCadastro.cdsPesquisaPrestador.Open;
+  end;
+
+//  codigo := dmCadastro.cdsPesquisaPrestadorCD_MORADOR.AsInteger + 1;
+//  dmCadastro.cdsPesquisaPrestadorCD_MORADOR.AsInteger := codigo;
+
+
+
+//  dmCadastro.cdsPrestador.Append;
+end;
+
+end.

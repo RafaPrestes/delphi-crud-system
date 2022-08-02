@@ -1,0 +1,18 @@
+program CadastroCRUD;
+
+uses
+  Forms,
+  UntCadastro in 'UntCadastro.pas' {frmCadastro},
+  UntDmCadastro in 'UntDmCadastro.pas' {dmCadastro: TDataModule},
+  UntEditarCadastro in 'UntEditarCadastro.pas' {frmEditarCadastro};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmCadastro, frmCadastro);
+  Application.CreateForm(TdmCadastro, dmCadastro);
+  Application.CreateForm(TfrmEditarCadastro, frmEditarCadastro);
+  Application.Run;
+end.

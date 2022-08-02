@@ -1,0 +1,65 @@
+object frmEditar: TfrmEditar
+  Left = 0
+  Top = 0
+  Caption = 'frmEditar'
+  ClientHeight = 188
+  ClientWidth = 463
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 32
+    Top = 32
+    Width = 81
+    Height = 13
+    Caption = 'NM_PRESTADOR'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 32
+    Top = 78
+    Width = 34
+    Height = 13
+    Caption = 'NR_RG'
+    FocusControl = DBEdit2
+  end
+  object Button1: TButton
+    Left = 32
+    Top = 136
+    Width = 75
+    Height = 25
+    Caption = 'Salvar'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object DBEdit1: TDBEdit
+    Left = 32
+    Top = 51
+    Width = 400
+    Height = 21
+    DataField = 'NM_PRESTADOR'
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 32
+    Top = 97
+    Width = 199
+    Height = 21
+    DataField = 'NR_RG'
+    DataSource = DataSource1
+    TabOrder = 2
+  end
+  object DataSource1: TDataSource
+    DataSet = dmCadastro.cdsPrestador
+    Left = 296
+    Top = 120
+  end
+end

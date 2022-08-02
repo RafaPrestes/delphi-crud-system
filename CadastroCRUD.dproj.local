@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/03 09:40:53.884.pas,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\UntCadastro.pas</Transaction>
+    <Transaction>2022/06/03 09:40:53.884.dfm,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\USER\source\repos\Treino CRUD\UntCadastro.dfm</Transaction>
+    <Transaction>2022/06/03 09:41:05.046.dproj,C:\Users\USER\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\USER\source\repos\Treino CRUD\CadastroCRUD.dproj</Transaction>
+    <Transaction>2022/06/03 09:41:57.922.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\UntDmCadastro.pas</Transaction>
+    <Transaction>2022/06/03 09:41:57.922.dfm,C:\Users\USER\source\repos\Treino CRUD\Unit1.dfm=C:\Users\USER\source\repos\Treino CRUD\UntDmCadastro.dfm</Transaction>
+    <Transaction>2022/06/03 09:50:59.186.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\UntEditarCadastro.pas</Transaction>
+    <Transaction>2022/06/03 09:50:59.186.dfm,C:\Users\USER\source\repos\Treino CRUD\Unit1.dfm=C:\Users\USER\source\repos\Treino CRUD\UntEditarCadastro.dfm</Transaction>
+    <Transaction>2022/06/03 15:47:31.472.pas,C:\Users\USER\source\repos\Treino CRUD\UntEditarCadastro.pas=</Transaction>
+    <Transaction>2022/06/03 15:47:31.472.dfm,C:\Users\USER\source\repos\Treino CRUD\UntEditarCadastro.dfm=</Transaction>
+    <Transaction>2022/06/06 09:23:56.794.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\UntEditarMorador.pas</Transaction>
+    <Transaction>2022/06/06 09:23:56.794.dfm,C:\Users\USER\source\repos\Treino CRUD\Unit1.dfm=C:\Users\USER\source\repos\Treino CRUD\UntEditarMorador.dfm</Transaction>
+    <Transaction>2022/06/06 15:07:04.544.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\UntPesquisar.pas</Transaction>
+    <Transaction>2022/06/06 15:07:04.544.dfm,C:\Users\USER\source\repos\Treino CRUD\Unit1.dfm=C:\Users\USER\source\repos\Treino CRUD\UntPesquisar.dfm</Transaction>
+    <Transaction>2022/08/02 10:39:37.482.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\Thread.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="UntCadastro.pas"/>
+    <File Path="UntCadastro.dfm"/>
+    <File Path="UntDmCadastro.pas"/>
+    <File Path="UntDmCadastro.dfm"/>
+    <File Path="UntEditarMorador.pas"/>
+    <File Path="UntEditarMorador.dfm"/>
+    <File Path="UntPesquisar.pas"/>
+    <File Path="UntPesquisar.dfm"/>
+    <File Path="Thread.pas"/>
+  </ProjectSortOrder>
+</BorlandProject>
