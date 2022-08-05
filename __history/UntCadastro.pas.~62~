@@ -72,7 +72,6 @@ begin
         edUnidade.Text := '';
         dmCadastro.cdsPesquisaPrestador.Close;
         dmCadastro.cdsPesquisaPrestador.Open;
-        dmCadastro.cdsPesquisaPrestador.Refresh;
       end;
 
     dmCadastro.cdsPesquisaPrestador.Close;

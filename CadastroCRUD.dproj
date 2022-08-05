@@ -52,6 +52,8 @@
 				<Form>Form1</Form>
 			</DCCReference>
 			<DCCReference Include="Thread.pas"/>
+			<DCCReference Include="ThreadLoading.pas"/>
+			<DCCReference Include="ThreadGif.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

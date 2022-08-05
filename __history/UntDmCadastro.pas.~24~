@@ -81,7 +81,7 @@ procedure TDmCadastro.pesquisaPrestador();
   var
   SQL : String;
 begin
-  SQL := 'select * from TAB_PRESTADOR';
+  SQL := 'select * from TAB_MORADOR';
 
 
   DmCadastro.cdsPesquisaPrestador.Close;

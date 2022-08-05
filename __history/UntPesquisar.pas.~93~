@@ -37,6 +37,7 @@ type
   private
     { Private declarations }
     procedure exportarExcel();
+    procedure excel();
   public
     { Public declarations }
     sLocal: String
@@ -48,8 +49,7 @@ var
 
 implementation
 
-uses UntDmCadastro, UntCadastro, UntEditarMorador, Thread, ThreadLoading,
-  ThreadGif;
+uses UntDmCadastro, UntCadastro, UntEditarMorador, Thread, ThreadLoading;
 
 var
   TPesquisar: ThreadTeste;
@@ -81,24 +81,9 @@ begin
 end;
 
 procedure TForm1.btnExportarExcelClick(Sender: TObject);
-var
- linha, coluna: Integer;
-  planilha: variant;
-  valorCampo: string;
-  t : TThread;
 begin
-  btnExportarPdf.Enabled := false;
-  btnExportarExcel.Enabled := false;
-  btnExcluir.Enabled := false;
-  btnNovo.Enabled := false;
-  btnPesquisa.Enabled := false;
-  // desabilita o botão de fechar do forms
-  EnableMenuItem(GetSystemMenu(handle, False), SC_CLOSE, MF_BYCOMMAND or MF_GRAYED);
-
-   Image1.Visible := true;
-
-   TExcel := ThreadLoad.Create(exportarExcel);
-
+//  Image1.Visible := true;
+  TExcel := ThreadLoad.Create(false, excel, Self);
 end;
 
 procedure TForm1.btnNovoClick(Sender: TObject);
@@ -114,14 +99,124 @@ begin
   dmCadastro.qryPesquisaPrestador.Close;
 
   // executando a Thread
-  ThreadTeste.Cria();
+//  ThreadTeste.Cria();
 
+//condição para diferenciar o tipo selecionado do combobox
+  if Form1.ComboBox1.ItemIndex = 0 then
+    begin
+      dmCadastro.qryPesquisaPrestador.SQL.Clear;
+      SQL := 'select * from tab_prestador where nm_prestador like' + QuotedStr(Form1.edPesquisa.Text + '%');
+      DmCadastro.cdsPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.SQL.Clear;
+      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+      DmCadastro.cdsPesquisaPrestador.Open;
+
+      if dmCadastro.cdsPesquisaPrestador.RecordCount < 1 then
+      begin
+        Application.MessageBox(
+        'Não foi encontrado nenhum visitante com o nome informado.',
+        'Atenção', MB_ICONWARNING);
+        Exit;
+      end;
+    end
+  else if Form1.ComboBox1.ItemIndex = 1 then
+    begin
+      dmCadastro.qryPesquisaPrestador.SQL.Clear;
+      SQL := 'select * from tab_prestador where nr_rg like ' + QuotedStr(Form1.edPesquisa.Text + '%');
+      DmCadastro.cdsPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.SQL.Clear;
+      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+      DmCadastro.cdsPesquisaPrestador.Open;
+
+      if dmCadastro.cdsPesquisaPrestador.RecordCount < 1 then
+      begin
+        Application.MessageBox(
+        'Não foi encontrado nenhum visitante com o RG informado.',
+        'Atenção', MB_ICONWARNING);
+        Exit;
+      end;
+    end
+  else if Form1.ComboBox1.ItemIndex = 2 then
+    begin
+      dmCadastro.qryPesquisaPrestador.SQL.Clear;
+      SQL := 'select * from tab_prestador where nm_unidade like ' + QuotedStr(Form1.edPesquisa.Text + '%');
+      DmCadastro.cdsPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.SQL.Clear;
+      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+      DmCadastro.cdsPesquisaPrestador.Open;
+
+      if dmCadastro.cdsPesquisaPrestador.RecordCount < 1 then
+      begin
+        Application.MessageBox(
+        'Não foi encontrado nenhum visitante com a Unidade informada.',
+        'Atenção', MB_ICONWARNING);
+        Exit;
+      end;
+  end
+  else if Form1.ComboBox1.ItemIndex = -1 then
+    begin
+      dmCadastro.qryPesquisaPrestador.SQL.Clear;
+      SQL := 'select * from tab_prestador';
+      DmCadastro.cdsPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.Close;
+      DmCadastro.qryPesquisaPrestador.SQL.Clear;
+      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
+      DmCadastro.cdsPesquisaPrestador.Open;
+    end;
 end;
 
 procedure TForm1.DBGrid1CellClick(Column: TColumn);
 begin
    //quando clicar em um item da grid mostrar o botão de editar
    btnEditar.Visible := true;
+end;
+
+procedure TForm1.excel;
+var
+  linha, coluna: Integer;
+  planilha: variant;
+  valorCampo: string;
+begin
+  planilha := CreateOleObject('Excel.Application');
+  planilha.Workbooks.Add(1);
+  planilha.Cells.Select;
+  // planilha.Selection.NumberFormat := '@';
+  planilha.caption := 'Exportação de prestadores';
+  planilha.Visible := false;
+  linha := 2;
+
+  // colocando nome nas colunas
+  planilha.Cells[1, 1] := 'NOME';
+  planilha.Cells[1, 2] := 'RG';
+  planilha.Cells[1, 3] := 'UNIDADE';
+
+  dmcadastro.cdsPesquisaPrestador.First;
+
+  // preenchendo colunas com os dados do banco
+
+  begin
+    try
+      while not dmcadastro.cdsPesquisaPrestador.Eof do
+      begin
+        planilha.Cells[linha, 1] :=
+          dmcadastro.cdsPesquisaPrestadorNM_PRESTADOR.AsString;
+        planilha.Cells[linha, 2] :=
+          dmcadastro.cdsPesquisaPrestadorNR_RG.AsString;
+        planilha.Cells[linha, 3] :=
+          dmcadastro.cdsPesquisaPrestadorNM_UNIDADE.AsString;
+        linha := linha + 1;
+        dmcadastro.cdsPesquisaPrestador.Next;
+      end;
+      planilha.columns.AutoFit;
+      planilha.Visible := true;
+    finally
+      planilha := Unassigned;
+    end;
+  end;
+
 end;
 
 procedure TForm1.exportarExcel;
@@ -166,14 +261,6 @@ begin
       planilha := Unassigned;
     end;
   end;
-
-  btnExportarPdf.Enabled := true;
-  btnExportarExcel.Enabled := true;
-  btnExcluir.Enabled := true;
-  btnNovo.Enabled := true;
-  btnPesquisa.Enabled := true;
-  // habilita o botão de fechar do forms
-  EnableMenuItem(GetSystemMenu(handle, True), SC_CLOSE, MF_BYCOMMAND or MF_GRAYED);
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -184,6 +271,7 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
+  Image1.Visible := true;
   (Image1.Picture.Graphic as TGIFImage).Animate := true;
 // LOCAL DE EXECUÇÃO
   sLocal := ExtractFilePath(Application.ExeName);

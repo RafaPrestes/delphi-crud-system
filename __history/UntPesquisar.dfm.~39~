@@ -1139,12 +1139,14 @@ object Form1: TForm1
         Expanded = False
         FieldName = 'NR_RG'
         Title.Caption = 'RG'
+        Width = 64
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'NM_UNIDADE'
         Title.Caption = 'Unidade'
+        Width = 64
         Visible = True
       end>
   end

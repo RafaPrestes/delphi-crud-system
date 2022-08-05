@@ -34,7 +34,7 @@ begin
   begin
     ProgressBar1.Position := 0;
     repeat
-    sleep(10);
+    sleep(50);
     ProgressBar1.Position := ProgressBar1.Position + 1;
     until
     ProgressBar1.Position = ProgressBar1.Max;

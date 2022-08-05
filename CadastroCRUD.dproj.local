@@ -15,6 +15,10 @@
     <Transaction>2022/06/06 15:07:04.544.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\UntPesquisar.pas</Transaction>
     <Transaction>2022/06/06 15:07:04.544.dfm,C:\Users\USER\source\repos\Treino CRUD\Unit1.dfm=C:\Users\USER\source\repos\Treino CRUD\UntPesquisar.dfm</Transaction>
     <Transaction>2022/08/02 10:39:37.482.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\Thread.pas</Transaction>
+    <Transaction>2022/08/05 08:44:40.604.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\ThreadLoading.pas</Transaction>
+    <Transaction>2022/08/05 09:47:23.205.pas,C:\Users\USER\source\repos\Treino CRUD\ThreadLoading.pas=</Transaction>
+    <Transaction>2022/08/05 09:50:15.210.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\ThreadLoading.pas</Transaction>
+    <Transaction>2022/08/05 10:16:12.448.pas,C:\Users\USER\source\repos\Treino CRUD\Unit1.pas=C:\Users\USER\source\repos\Treino CRUD\ThreadGif.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="UntCadastro.pas"/>
@@ -26,5 +30,7 @@
     <File Path="UntPesquisar.pas"/>
     <File Path="UntPesquisar.dfm"/>
     <File Path="Thread.pas"/>
+    <File Path="ThreadLoading.pas"/>
+    <File Path="ThreadGif.pas"/>
   </ProjectSortOrder>
 </BorlandProject>

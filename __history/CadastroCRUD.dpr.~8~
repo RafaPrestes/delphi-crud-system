@@ -7,8 +7,7 @@ uses
   UntEditarMorador in 'UntEditarMorador.pas' {frmEditar},
   UntPesquisar in 'UntPesquisar.pas' {Form1},
   Thread in 'Thread.pas',
-  ThreadLoading in 'ThreadLoading.pas',
-  ThreadGif in 'ThreadGif.pas';
+  ThreadLoading in 'ThreadLoading.pas';
 
 {$R *.res}
 

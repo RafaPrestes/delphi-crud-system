@@ -60,7 +60,6 @@ object dmCadastro: TdmCadastro
     Top = 192
   end
   object DATACADASTRO: TSQLConnection
-    ConnectionName = 'DATACADASTRO'
     DriverName = 'Firebird'
     GetDriverFunc = 'getSQLDriverINTERBASE'
     LibraryName = 'dbxfb.dll'
@@ -80,7 +79,7 @@ object dmCadastro: TdmCadastro
     MaxBlobSize = -1
     Params = <>
     SQL.Strings = (
-      'SELECT * FROM TAB_PRESTADOR tp;')
+      'select * from tab_prestador;')
     SQLConnection = DATACADASTRO
     Left = 264
     Top = 128

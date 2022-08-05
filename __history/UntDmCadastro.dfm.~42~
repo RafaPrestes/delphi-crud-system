@@ -60,7 +60,6 @@ object dmCadastro: TdmCadastro
     Top = 192
   end
   object DATACADASTRO: TSQLConnection
-    ConnectionName = 'DATACADASTRO'
     DriverName = 'Firebird'
     GetDriverFunc = 'getSQLDriverINTERBASE'
     LibraryName = 'dbxfb.dll'
