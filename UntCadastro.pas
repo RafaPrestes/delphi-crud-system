@@ -15,8 +15,6 @@ type
     edRG: TEdit;
     Label1: TLabel;
     Label2: TLabel;
-    edUnidade: TEdit;
-    Label3: TLabel;
     procedure btnInserirClick(Sender: TObject);
 
   private
@@ -41,7 +39,9 @@ procedure TfrmCadastro.btnInserirClick(Sender: TObject);
 begin
   dmCadastro.cdsPesquisaPrestador.Close;
   dmCadastro.cdsPesquisaPrestador.Open;
-  dmCadastro.cdsPesquisaPrestador.Append;
+  dmCadastro.cdsPrestador.Append;
+
+
 
   if edNome.Text = '' then
   begin
@@ -56,24 +56,20 @@ begin
   end;
 
  //habilitando o modo Insert para inserir os valores
- if DmCadastro.cdsPesquisaPrestador.State in [dsInsert] then
+ if DmCadastro.cdsPrestador.State in [dsInsert] then
   begin
-    if (edRG.Text <> '') and (edNome.Text <> '') and (edUnidade.Text<> '') then
-      begin
-        dmCadastro.cdsPesquisaPrestadorNM_PRESTADOR.Value := edNome.Text;
-        dmCadastro.cdsPesquisaPrestadorNR_RG.Value := edRG.Text;
-        dmCadastro.cdsPesquisaPrestadorNM_UNIDADE.Value := edUnidade.Text;
 
-        dmCadastro.cdsPesquisaPrestador.Post;
+        dmCadastro.cdsPrestadorNM_PRESTADOR.Value := edNome.Text;
+        dmCadastro.cdsPrestadorNR_RG.Value := edRG.Text;
+
+        dmCadastro.cdsPrestador.Post;
         ShowMessage('Inserido com Sucesso!');
-        dmCadastro.cdsPesquisaPrestador.ApplyUpdates(0);
+        dmCadastro.cdsPrestador.ApplyUpdates(0);
         edNome.Text := '';
         edRG.Text := '';
-        edUnidade.Text := '';
         dmCadastro.cdsPesquisaPrestador.Close;
         dmCadastro.cdsPesquisaPrestador.Open;
         dmCadastro.cdsPesquisaPrestador.Refresh;
-      end;
 
     dmCadastro.cdsPesquisaPrestador.Close;
     dmCadastro.cdsPesquisaPrestador.Open;

@@ -1060,8 +1060,8 @@ object Form1: TForm1
     Visible = False
   end
   object btnPesquisa: TButton
-    Left = 750
-    Top = 54
+    Left = 774
+    Top = 52
     Width = 75
     Height = 25
     Caption = 'Pesquisar'
@@ -1097,13 +1097,12 @@ object Form1: TForm1
     TextHint = 'Selecione o tipo de busca'
     Items.Strings = (
       'NOME'
-      'RG'
-      'UNIDADE')
+      'RG')
   end
   object edPesquisa: TEdit
     Left = 200
     Top = 56
-    Width = 529
+    Width = 568
     Height = 21
     CharCase = ecUpperCase
     TabOrder = 4
@@ -1125,12 +1124,6 @@ object Form1: TForm1
     Columns = <
       item
         Expanded = False
-        FieldName = 'CD_PRESTADOR'
-        Title.Caption = 'C'#243'digo'
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'NM_PRESTADOR'
         Title.Caption = 'Nome'
         Visible = True
@@ -1139,12 +1132,6 @@ object Form1: TForm1
         Expanded = False
         FieldName = 'NR_RG'
         Title.Caption = 'RG'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'NM_UNIDADE'
-        Title.Caption = 'Unidade'
         Visible = True
       end>
   end

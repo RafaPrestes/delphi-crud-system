@@ -34,10 +34,20 @@ begin
 end;
 
 procedure ThreadLoad.Execute;
+var
+ Start, Stop: cardinal;
+ ElapsedMilliseconds : integer;
 begin
-if FTerminateEvent.WaitFor(2000) = wrTimeout then
+
+Start := GetTickCount;
+sleep(1000);
+Stop := GetTickCount;
+ElapsedMilliseconds := Stop - Start;
+
+if FTerminateEvent.WaitFor(ElapsedMilliseconds) = wrTimeout then
   Synchronize(_proc);
   Form1.Image1.Visible := false;
+
 end;
 
 end.

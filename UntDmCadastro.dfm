@@ -26,12 +26,283 @@ object dmCadastro: TdmCadastro
       FieldName = 'NR_RG'
       Size = 15
     end
+    object cdsPrestadorDT_NASCIMENTO: TDateField
+      FieldName = 'DT_NASCIMENTO'
+    end
+    object cdsPrestadorNR_TELEFONE_PESSOAL: TStringField
+      FieldName = 'NR_TELEFONE_PESSOAL'
+      Size = 15
+    end
+    object cdsPrestadorANO_VEICULO: TIntegerField
+      FieldName = 'ANO_VEICULO'
+    end
+    object cdsPrestadorMARCA_VEICULO: TStringField
+      FieldName = 'MARCA_VEICULO'
+      Size = 30
+    end
+    object cdsPrestadorMODELO_VEICULO: TStringField
+      FieldName = 'MODELO_VEICULO'
+      Size = 30
+    end
+    object cdsPrestadorCOR_VEICULO: TStringField
+      FieldName = 'COR_VEICULO'
+      Size = 30
+    end
+    object cdsPrestadorPLACA_VEICULO: TStringField
+      FieldName = 'PLACA_VEICULO'
+      Size = 7
+    end
+    object cdsPrestadorDS_OBS: TMemoField
+      FieldName = 'DS_OBS'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object cdsPrestadorID_ACESSO: TStringField
+      FieldName = 'ID_ACESSO'
+      Size = 1
+    end
+    object cdsPrestadorDT_CADASTRO: TDateField
+      FieldName = 'DT_CADASTRO'
+    end
+    object cdsPrestadorIMG_FACE: TBlobField
+      FieldName = 'IMG_FACE'
+      Size = 1
+    end
+    object cdsPrestadorIMG_DOCUMENTO: TBlobField
+      FieldName = 'IMG_DOCUMENTO'
+      Size = 1
+    end
+    object cdsPrestadorIMG_VEICULO: TBlobField
+      FieldName = 'IMG_VEICULO'
+      Size = 1
+    end
+    object cdsPrestadorNM_RAZAO_SOCIAL: TStringField
+      FieldName = 'NM_RAZAO_SOCIAL'
+      Size = 50
+    end
+    object cdsPrestadorDS_RAMO_EMPRESA: TStringField
+      FieldName = 'DS_RAMO_EMPRESA'
+      Size = 30
+    end
+    object cdsPrestadorNM_RESPONSAVEL: TStringField
+      FieldName = 'NM_RESPONSAVEL'
+      Size = 30
+    end
+    object cdsPrestadorNR_TELEFONE_EMPRESA: TStringField
+      FieldName = 'NR_TELEFONE_EMPRESA'
+      Size = 15
+    end
+    object cdsPrestadorNR_RAMAL: TStringField
+      FieldName = 'NR_RAMAL'
+      Size = 12
+    end
+    object cdsPrestadorNM_ULT_CONTATO: TStringField
+      FieldName = 'NM_ULT_CONTATO'
+      Size = 30
+    end
+    object cdsPrestadorDT_ULT_ACESSO: TDateField
+      FieldName = 'DT_ULT_ACESSO'
+    end
+    object cdsPrestadorDS_ULT_LOCAL: TStringField
+      FieldName = 'DS_ULT_LOCAL'
+      Size = 30
+    end
+    object cdsPrestadorNR_TEL_ULT_CONTATO: TStringField
+      FieldName = 'NR_TEL_ULT_CONTATO'
+      Size = 15
+    end
+    object cdsPrestadorNR_CRACHA: TStringField
+      FieldName = 'NR_CRACHA'
+    end
+    object cdsPrestadorDS_MOTIVO_BLOQUEIO: TStringField
+      FieldName = 'DS_MOTIVO_BLOQUEIO'
+      Size = 200
+    end
+    object cdsPrestadorID_SINCRONIZACAO: TSmallintField
+      FieldName = 'ID_SINCRONIZACAO'
+    end
+    object cdsPrestadorBIO_DIR: TBlobField
+      FieldName = 'BIO_DIR'
+      Size = 1
+    end
+    object cdsPrestadorBIO_ESQ: TBlobField
+      FieldName = 'BIO_ESQ'
+      Size = 1
+    end
+    object cdsPrestadorID_PRESENCA: TIntegerField
+      FieldName = 'ID_PRESENCA'
+    end
+    object cdsPrestadorID_INATIVO: TIntegerField
+      FieldName = 'ID_INATIVO'
+    end
+    object cdsPrestadorID_TEMPLATE_CARREGADO: TIntegerField
+      FieldName = 'ID_TEMPLATE_CARREGADO'
+    end
+    object cdsPrestadorID_INATIVO_CARREGADO: TIntegerField
+      FieldName = 'ID_INATIVO_CARREGADO'
+    end
+    object cdsPrestadorID_CADASTRO_REFEITO: TIntegerField
+      FieldName = 'ID_CADASTRO_REFEITO'
+    end
+    object cdsPrestadorID_CADASTRO_ANTIGO: TSmallintField
+      FieldName = 'ID_CADASTRO_ANTIGO'
+    end
+    object cdsPrestadorDT_INATIVACAO: TSQLTimeStampField
+      FieldName = 'DT_INATIVACAO'
+    end
+    object cdsPrestadorID_USUARIO_INATIVACAO: TSmallintField
+      FieldName = 'ID_USUARIO_INATIVACAO'
+    end
+    object cdsPrestadorID_ACESSO_LIBERADO: TSmallintField
+      FieldName = 'ID_ACESSO_LIBERADO'
+    end
+    object cdsPrestadorDT_VALIDADE_EXAME: TDateField
+      FieldName = 'DT_VALIDADE_EXAME'
+    end
+    object cdsPrestadorAVULSO_VEICULO: TIntegerField
+      FieldName = 'AVULSO_VEICULO'
+    end
+    object cdsPrestadorID_TEMPLATE_APAGADO: TSmallintField
+      FieldName = 'ID_TEMPLATE_APAGADO'
+    end
+    object cdsPrestadorID_CONTROLE_BIO: TSmallintField
+      FieldName = 'ID_CONTROLE_BIO'
+    end
+    object cdsPrestadorNR_QLD_BIO_ESQ: TSmallintField
+      FieldName = 'NR_QLD_BIO_ESQ'
+    end
+    object cdsPrestadorNR_QLD_BIO_DIR: TSmallintField
+      FieldName = 'NR_QLD_BIO_DIR'
+    end
+    object cdsPrestadorID_PRESENCA_INTERNA: TSmallintField
+      FieldName = 'ID_PRESENCA_INTERNA'
+    end
+    object cdsPrestadorDATA_CADASTRO: TSQLTimeStampField
+      FieldName = 'DATA_CADASTRO'
+    end
+    object cdsPrestadorDATA_ATUALIZACAO: TSQLTimeStampField
+      FieldName = 'DATA_ATUALIZACAO'
+    end
+    object cdsPrestadorID_USUARIO_CADASTRO: TIntegerField
+      FieldName = 'ID_USUARIO_CADASTRO'
+    end
+    object cdsPrestadorID_USUARIO_ATUALIZACAO: TIntegerField
+      FieldName = 'ID_USUARIO_ATUALIZACAO'
+    end
+    object cdsPrestadorID_TIPO_TEMPLATE_BIO: TSmallintField
+      FieldName = 'ID_TIPO_TEMPLATE_BIO'
+    end
+    object cdsPrestadorID_DEDO_DIR: TSmallintField
+      FieldName = 'ID_DEDO_DIR'
+    end
+    object cdsPrestadorID_DEDO_ESQ: TSmallintField
+      FieldName = 'ID_DEDO_ESQ'
+    end
+    object cdsPrestadorDT_ANTECEDENTE_CRIMINAL: TDateField
+      FieldName = 'DT_ANTECEDENTE_CRIMINAL'
+    end
+    object cdsPrestadorDS_UF: TStringField
+      FieldName = 'DS_UF'
+      Size = 2
+    end
+    object cdsPrestadorNM_MAE: TStringField
+      FieldName = 'NM_MAE'
+      Size = 50
+    end
+    object cdsPrestadorNR_CARTEIRA_TRABALHO: TStringField
+      FieldName = 'NR_CARTEIRA_TRABALHO'
+    end
+    object cdsPrestadorNM_PAI: TStringField
+      FieldName = 'NM_PAI'
+      Size = 50
+    end
+    object cdsPrestadorDS_NATURALIDADE: TStringField
+      FieldName = 'DS_NATURALIDADE'
+      Size = 50
+    end
+    object cdsPrestadorDS_PROFISSAO: TStringField
+      FieldName = 'DS_PROFISSAO'
+      Size = 30
+    end
+    object cdsPrestadorDS_ENDERECO: TStringField
+      FieldName = 'DS_ENDERECO'
+      Size = 50
+    end
+    object cdsPrestadorDS_BAIRRO: TStringField
+      FieldName = 'DS_BAIRRO'
+    end
+    object cdsPrestadorDS_CIDADE: TStringField
+      FieldName = 'DS_CIDADE'
+      Size = 30
+    end
+    object cdsPrestadorTELEFONE_PRESTADOR: TStringField
+      FieldName = 'TELEFONE_PRESTADOR'
+    end
+    object cdsPrestadorNR_TELEFONE_PESSOAL_2: TStringField
+      FieldName = 'NR_TELEFONE_PESSOAL_2'
+      Size = 15
+    end
+    object cdsPrestadorID_EMPRESA: TIntegerField
+      FieldName = 'ID_EMPRESA'
+    end
+    object cdsPrestadorID_MORADOR_CADASTRO: TIntegerField
+      FieldName = 'ID_MORADOR_CADASTRO'
+    end
+    object cdsPrestadorID_MORADOR_MIGRADO: TIntegerField
+      FieldName = 'ID_MORADOR_MIGRADO'
+    end
+    object cdsPrestadorID_OUTSIDE: TStringField
+      FieldName = 'ID_OUTSIDE'
+      Size = 100
+    end
+    object cdsPrestadorNR_DOCUMENTO: TStringField
+      FieldName = 'NR_DOCUMENTO'
+      Size = 50
+    end
+    object cdsPrestadorID_PROBLEMA_FACIAL: TIntegerField
+      FieldName = 'ID_PROBLEMA_FACIAL'
+    end
+    object cdsPrestadorDS_SEXO: TStringField
+      FieldName = 'DS_SEXO'
+      Size = 10
+    end
+    object cdsPrestadorNR_CPF_CNPJ: TStringField
+      FieldName = 'NR_CPF_CNPJ'
+      Size = 14
+    end
+    object cdsPrestadorDS_ESTADO_CIVIL: TStringField
+      FieldName = 'DS_ESTADO_CIVIL'
+      Size = 10
+    end
+    object cdsPrestadorDS_STATUS_ANTECEDENTE: TStringField
+      FieldName = 'DS_STATUS_ANTECEDENTE'
+    end
+    object cdsPrestadorID_STATUS_ANTECEDENTES: TStringField
+      FieldName = 'ID_STATUS_ANTECEDENTES'
+      FixedChar = True
+      Size = 2
+    end
+    object cdsPrestadorID_CONTROLE_FACIAL: TIntegerField
+      FieldName = 'ID_CONTROLE_FACIAL'
+    end
+    object cdsPrestadorID_ESPECIAL: TIntegerField
+      FieldName = 'ID_ESPECIAL'
+    end
+    object cdsPrestadorID_PROB_IDFACE: TIntegerField
+      FieldName = 'ID_PROB_IDFACE'
+    end
+    object cdsPrestadorID_UTILIZA_FACIALP: TIntegerField
+      FieldName = 'ID_UTILIZA_FACIALP'
+    end
+    object cdsPrestadorID_PROBLEMA_FACIAL_INTELBRAS: TIntegerField
+      FieldName = 'ID_PROBLEMA_FACIAL_INTELBRAS'
+    end
   end
   object dsePrestador: TSQLDataSet
     SchemaName = 'SYSDBA'
     CommandText = 'select * from TAB_PRESTADOR WHERE CD_PRESTADOR = :CD_PRESTADOR ;'
     DbxCommandType = 'Dbx.SQL'
-    MaxBlobSize = -1
+    MaxBlobSize = 1
     Params = <
       item
         DataType = ftInteger
@@ -53,6 +324,277 @@ object dmCadastro: TdmCadastro
       FieldName = 'NR_RG'
       Size = 15
     end
+    object dsePrestadorDT_NASCIMENTO: TDateField
+      FieldName = 'DT_NASCIMENTO'
+    end
+    object dsePrestadorNR_TELEFONE_PESSOAL: TStringField
+      FieldName = 'NR_TELEFONE_PESSOAL'
+      Size = 15
+    end
+    object dsePrestadorANO_VEICULO: TIntegerField
+      FieldName = 'ANO_VEICULO'
+    end
+    object dsePrestadorMARCA_VEICULO: TStringField
+      FieldName = 'MARCA_VEICULO'
+      Size = 30
+    end
+    object dsePrestadorMODELO_VEICULO: TStringField
+      FieldName = 'MODELO_VEICULO'
+      Size = 30
+    end
+    object dsePrestadorCOR_VEICULO: TStringField
+      FieldName = 'COR_VEICULO'
+      Size = 30
+    end
+    object dsePrestadorPLACA_VEICULO: TStringField
+      FieldName = 'PLACA_VEICULO'
+      Size = 7
+    end
+    object dsePrestadorDS_OBS: TMemoField
+      FieldName = 'DS_OBS'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object dsePrestadorID_ACESSO: TStringField
+      FieldName = 'ID_ACESSO'
+      Size = 1
+    end
+    object dsePrestadorDT_CADASTRO: TDateField
+      FieldName = 'DT_CADASTRO'
+    end
+    object dsePrestadorIMG_FACE: TBlobField
+      FieldName = 'IMG_FACE'
+      Size = 1
+    end
+    object dsePrestadorIMG_DOCUMENTO: TBlobField
+      FieldName = 'IMG_DOCUMENTO'
+      Size = 1
+    end
+    object dsePrestadorIMG_VEICULO: TBlobField
+      FieldName = 'IMG_VEICULO'
+      Size = 1
+    end
+    object dsePrestadorNM_RAZAO_SOCIAL: TStringField
+      FieldName = 'NM_RAZAO_SOCIAL'
+      Size = 50
+    end
+    object dsePrestadorDS_RAMO_EMPRESA: TStringField
+      FieldName = 'DS_RAMO_EMPRESA'
+      Size = 30
+    end
+    object dsePrestadorNM_RESPONSAVEL: TStringField
+      FieldName = 'NM_RESPONSAVEL'
+      Size = 30
+    end
+    object dsePrestadorNR_TELEFONE_EMPRESA: TStringField
+      FieldName = 'NR_TELEFONE_EMPRESA'
+      Size = 15
+    end
+    object dsePrestadorNR_RAMAL: TStringField
+      FieldName = 'NR_RAMAL'
+      Size = 12
+    end
+    object dsePrestadorNM_ULT_CONTATO: TStringField
+      FieldName = 'NM_ULT_CONTATO'
+      Size = 30
+    end
+    object dsePrestadorDT_ULT_ACESSO: TDateField
+      FieldName = 'DT_ULT_ACESSO'
+    end
+    object dsePrestadorDS_ULT_LOCAL: TStringField
+      FieldName = 'DS_ULT_LOCAL'
+      Size = 30
+    end
+    object dsePrestadorNR_TEL_ULT_CONTATO: TStringField
+      FieldName = 'NR_TEL_ULT_CONTATO'
+      Size = 15
+    end
+    object dsePrestadorNR_CRACHA: TStringField
+      FieldName = 'NR_CRACHA'
+    end
+    object dsePrestadorDS_MOTIVO_BLOQUEIO: TStringField
+      FieldName = 'DS_MOTIVO_BLOQUEIO'
+      Size = 200
+    end
+    object dsePrestadorID_SINCRONIZACAO: TSmallintField
+      FieldName = 'ID_SINCRONIZACAO'
+    end
+    object dsePrestadorBIO_DIR: TBlobField
+      FieldName = 'BIO_DIR'
+      Size = 1
+    end
+    object dsePrestadorBIO_ESQ: TBlobField
+      FieldName = 'BIO_ESQ'
+      Size = 1
+    end
+    object dsePrestadorID_PRESENCA: TIntegerField
+      FieldName = 'ID_PRESENCA'
+    end
+    object dsePrestadorID_INATIVO: TIntegerField
+      FieldName = 'ID_INATIVO'
+    end
+    object dsePrestadorID_TEMPLATE_CARREGADO: TIntegerField
+      FieldName = 'ID_TEMPLATE_CARREGADO'
+    end
+    object dsePrestadorID_INATIVO_CARREGADO: TIntegerField
+      FieldName = 'ID_INATIVO_CARREGADO'
+    end
+    object dsePrestadorID_CADASTRO_REFEITO: TIntegerField
+      FieldName = 'ID_CADASTRO_REFEITO'
+    end
+    object dsePrestadorID_CADASTRO_ANTIGO: TSmallintField
+      FieldName = 'ID_CADASTRO_ANTIGO'
+    end
+    object dsePrestadorDT_INATIVACAO: TSQLTimeStampField
+      FieldName = 'DT_INATIVACAO'
+    end
+    object dsePrestadorID_USUARIO_INATIVACAO: TSmallintField
+      FieldName = 'ID_USUARIO_INATIVACAO'
+    end
+    object dsePrestadorID_ACESSO_LIBERADO: TSmallintField
+      FieldName = 'ID_ACESSO_LIBERADO'
+    end
+    object dsePrestadorDT_VALIDADE_EXAME: TDateField
+      FieldName = 'DT_VALIDADE_EXAME'
+    end
+    object dsePrestadorAVULSO_VEICULO: TIntegerField
+      FieldName = 'AVULSO_VEICULO'
+    end
+    object dsePrestadorID_TEMPLATE_APAGADO: TSmallintField
+      FieldName = 'ID_TEMPLATE_APAGADO'
+    end
+    object dsePrestadorID_CONTROLE_BIO: TSmallintField
+      FieldName = 'ID_CONTROLE_BIO'
+    end
+    object dsePrestadorNR_QLD_BIO_ESQ: TSmallintField
+      FieldName = 'NR_QLD_BIO_ESQ'
+    end
+    object dsePrestadorNR_QLD_BIO_DIR: TSmallintField
+      FieldName = 'NR_QLD_BIO_DIR'
+    end
+    object dsePrestadorID_PRESENCA_INTERNA: TSmallintField
+      FieldName = 'ID_PRESENCA_INTERNA'
+    end
+    object dsePrestadorDATA_CADASTRO: TSQLTimeStampField
+      FieldName = 'DATA_CADASTRO'
+    end
+    object dsePrestadorDATA_ATUALIZACAO: TSQLTimeStampField
+      FieldName = 'DATA_ATUALIZACAO'
+    end
+    object dsePrestadorID_USUARIO_CADASTRO: TIntegerField
+      FieldName = 'ID_USUARIO_CADASTRO'
+    end
+    object dsePrestadorID_USUARIO_ATUALIZACAO: TIntegerField
+      FieldName = 'ID_USUARIO_ATUALIZACAO'
+    end
+    object dsePrestadorID_TIPO_TEMPLATE_BIO: TSmallintField
+      FieldName = 'ID_TIPO_TEMPLATE_BIO'
+    end
+    object dsePrestadorID_DEDO_DIR: TSmallintField
+      FieldName = 'ID_DEDO_DIR'
+    end
+    object dsePrestadorID_DEDO_ESQ: TSmallintField
+      FieldName = 'ID_DEDO_ESQ'
+    end
+    object dsePrestadorDT_ANTECEDENTE_CRIMINAL: TDateField
+      FieldName = 'DT_ANTECEDENTE_CRIMINAL'
+    end
+    object dsePrestadorDS_UF: TStringField
+      FieldName = 'DS_UF'
+      Size = 2
+    end
+    object dsePrestadorNM_MAE: TStringField
+      FieldName = 'NM_MAE'
+      Size = 50
+    end
+    object dsePrestadorNR_CARTEIRA_TRABALHO: TStringField
+      FieldName = 'NR_CARTEIRA_TRABALHO'
+    end
+    object dsePrestadorNM_PAI: TStringField
+      FieldName = 'NM_PAI'
+      Size = 50
+    end
+    object dsePrestadorDS_NATURALIDADE: TStringField
+      FieldName = 'DS_NATURALIDADE'
+      Size = 50
+    end
+    object dsePrestadorDS_PROFISSAO: TStringField
+      FieldName = 'DS_PROFISSAO'
+      Size = 30
+    end
+    object dsePrestadorDS_ENDERECO: TStringField
+      FieldName = 'DS_ENDERECO'
+      Size = 50
+    end
+    object dsePrestadorDS_BAIRRO: TStringField
+      FieldName = 'DS_BAIRRO'
+    end
+    object dsePrestadorDS_CIDADE: TStringField
+      FieldName = 'DS_CIDADE'
+      Size = 30
+    end
+    object dsePrestadorTELEFONE_PRESTADOR: TStringField
+      FieldName = 'TELEFONE_PRESTADOR'
+    end
+    object dsePrestadorNR_TELEFONE_PESSOAL_2: TStringField
+      FieldName = 'NR_TELEFONE_PESSOAL_2'
+      Size = 15
+    end
+    object dsePrestadorID_EMPRESA: TIntegerField
+      FieldName = 'ID_EMPRESA'
+    end
+    object dsePrestadorID_MORADOR_CADASTRO: TIntegerField
+      FieldName = 'ID_MORADOR_CADASTRO'
+    end
+    object dsePrestadorID_MORADOR_MIGRADO: TIntegerField
+      FieldName = 'ID_MORADOR_MIGRADO'
+    end
+    object dsePrestadorID_OUTSIDE: TStringField
+      FieldName = 'ID_OUTSIDE'
+      Size = 100
+    end
+    object dsePrestadorNR_DOCUMENTO: TStringField
+      FieldName = 'NR_DOCUMENTO'
+      Size = 50
+    end
+    object dsePrestadorID_PROBLEMA_FACIAL: TIntegerField
+      FieldName = 'ID_PROBLEMA_FACIAL'
+    end
+    object dsePrestadorDS_SEXO: TStringField
+      FieldName = 'DS_SEXO'
+      Size = 10
+    end
+    object dsePrestadorNR_CPF_CNPJ: TStringField
+      FieldName = 'NR_CPF_CNPJ'
+      Size = 14
+    end
+    object dsePrestadorDS_ESTADO_CIVIL: TStringField
+      FieldName = 'DS_ESTADO_CIVIL'
+      Size = 10
+    end
+    object dsePrestadorDS_STATUS_ANTECEDENTE: TStringField
+      FieldName = 'DS_STATUS_ANTECEDENTE'
+    end
+    object dsePrestadorID_STATUS_ANTECEDENTES: TStringField
+      FieldName = 'ID_STATUS_ANTECEDENTES'
+      FixedChar = True
+      Size = 2
+    end
+    object dsePrestadorID_CONTROLE_FACIAL: TIntegerField
+      FieldName = 'ID_CONTROLE_FACIAL'
+    end
+    object dsePrestadorID_ESPECIAL: TIntegerField
+      FieldName = 'ID_ESPECIAL'
+    end
+    object dsePrestadorID_PROB_IDFACE: TIntegerField
+      FieldName = 'ID_PROB_IDFACE'
+    end
+    object dsePrestadorID_UTILIZA_FACIALP: TIntegerField
+      FieldName = 'ID_UTILIZA_FACIALP'
+    end
+    object dsePrestadorID_PROBLEMA_FACIAL_INTELBRAS: TIntegerField
+      FieldName = 'ID_PROBLEMA_FACIAL_INTELBRAS'
+    end
   end
   object dspPrestador: TDataSetProvider
     DataSet = dsePrestador
@@ -67,8 +609,8 @@ object dmCadastro: TdmCadastro
     LoginPrompt = False
     Params.Strings = (
       
-        'Database=C:\Users\USER\source\repos\Treino CRUD\Banco\CADASTROCR' +
-        'UD.FDB'
+        'Database=C:\Users\USER\source\repos\Treino CRUD\Banco\BANCO_CRUD' +
+        '.FDB'
       'User_Name=SYSDBA')
     VendorLib = 'fbclient.dll'
     Connected = True
@@ -77,7 +619,7 @@ object dmCadastro: TdmCadastro
   end
   object qryPesquisaPrestador: TSQLQuery
     NumericMapping = True
-    MaxBlobSize = -1
+    MaxBlobSize = 1
     Params = <>
     SQL.Strings = (
       'SELECT * FROM TAB_PRESTADOR tp;')
@@ -95,10 +637,6 @@ object dmCadastro: TdmCadastro
       FieldName = 'NR_RG'
       Size = 15
     end
-    object qryPesquisaPrestadorNM_UNIDADE: TStringField
-      FieldName = 'NM_UNIDADE'
-      Size = 50
-    end
   end
   object dspPesquisaPrestador: TDataSetProvider
     DataSet = qryPesquisaPrestador
@@ -106,7 +644,6 @@ object dmCadastro: TdmCadastro
     Top = 192
   end
   object cdsPesquisaPrestador: TClientDataSet
-    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspPesquisaPrestador'
@@ -122,10 +659,6 @@ object dmCadastro: TdmCadastro
     object cdsPesquisaPrestadorNR_RG: TStringField
       FieldName = 'NR_RG'
       Size = 15
-    end
-    object cdsPesquisaPrestadorNM_UNIDADE: TStringField
-      FieldName = 'NM_UNIDADE'
-      Size = 50
     end
   end
   object IBDatabase1: TIBDatabase
@@ -220,7 +753,7 @@ object dmCadastro: TdmCadastro
     end
   end
   object qryPesquisa: TSQLQuery
-    MaxBlobSize = -1
+    MaxBlobSize = 1
     Params = <
       item
         DataType = ftString

@@ -31,14 +31,6 @@ object frmEditar: TfrmEditar
     Caption = 'RG:'
     FocusControl = DBEdit2
   end
-  object Label3: TLabel
-    Left = 20
-    Top = 142
-    Width = 43
-    Height = 13
-    Caption = 'Unidade:'
-    FocusControl = DBEdit3
-  end
   object Button1: TButton
     Left = 363
     Top = 168
@@ -83,16 +75,6 @@ object frmEditar: TfrmEditar
     ParentBackground = False
     ParentFont = False
     TabOrder = 3
-  end
-  object DBEdit3: TDBEdit
-    Left = 69
-    Top = 139
-    Width = 199
-    Height = 21
-    CharCase = ecUpperCase
-    DataField = 'NM_UNIDADE'
-    DataSource = DataSource1
-    TabOrder = 4
   end
   object DataSource1: TDataSource
     DataSet = dmCadastro.cdsPesquisaPrestador

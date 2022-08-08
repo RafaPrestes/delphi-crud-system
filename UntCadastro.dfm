@@ -29,13 +29,6 @@ object frmCadastro: TfrmCadastro
     Height = 13
     Caption = 'RG:'
   end
-  object Label3: TLabel
-    Left = 20
-    Top = 147
-    Width = 43
-    Height = 13
-    Caption = 'Unidade:'
-  end
   object btnInserir: TButton
     Left = 253
     Top = 184
@@ -78,14 +71,6 @@ object frmCadastro: TfrmCadastro
     Height = 21
     Color = clGradientInactiveCaption
     TabOrder = 3
-  end
-  object edUnidade: TEdit
-    Left = 69
-    Top = 144
-    Width = 177
-    Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 4
   end
   object ds: TDataSource
     DataSet = dmCadastro.cdsPrestador

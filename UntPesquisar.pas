@@ -141,7 +141,6 @@ begin
   // colocando nome nas colunas
   planilha.Cells[1, 1] := 'NOME';
   planilha.Cells[1, 2] := 'RG';
-  planilha.Cells[1, 3] := 'UNIDADE';
 
   dmcadastro.cdsPesquisaPrestador.First;
 
@@ -155,8 +154,6 @@ begin
           dmcadastro.cdsPesquisaPrestadorNM_PRESTADOR.AsString;
         planilha.Cells[linha, 2] :=
           dmcadastro.cdsPesquisaPrestadorNR_RG.AsString;
-        planilha.Cells[linha, 3] :=
-          dmcadastro.cdsPesquisaPrestadorNM_UNIDADE.AsString;
         linha := linha + 1;
         dmcadastro.cdsPesquisaPrestador.Next;
       end;

@@ -15,8 +15,6 @@ type
     Label2: TLabel;
     DBEdit2: TDBEdit;
     Panel1: TPanel;
-    Label3: TLabel;
-    DBEdit3: TDBEdit;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -43,7 +41,6 @@ begin
 
   dmCadastro.cdsPesquisaPrestadorNM_PRESTADOR.Value := frmEditar.DBEdit1.Text;
   dmCadastro.cdsPesquisaPrestadorNR_RG.Value := frmEditar.DBEdit2.Text;
-  dmCadastro.cdsPesquisaPrestadorNM_UNIDADE.Value := frmEditar.DBEdit3.Text;
 
   dmCadastro.cdsPesquisaPrestador.Post;
   ShowMessage('Atualizado !');

@@ -88,24 +88,6 @@ begin
         Exit;
       end;
     end
-  else if Form1.ComboBox1.ItemIndex = 2 then
-    begin
-      dmCadastro.qryPesquisaPrestador.SQL.Clear;
-      SQL := 'select * from tab_prestador where nm_unidade like ' + QuotedStr(Form1.edPesquisa.Text + '%');
-      DmCadastro.cdsPesquisaPrestador.Close;
-      DmCadastro.qryPesquisaPrestador.Close;
-      DmCadastro.qryPesquisaPrestador.SQL.Clear;
-      DmCadastro.qryPesquisaPrestador.SQL.Add(SQL);
-      DmCadastro.cdsPesquisaPrestador.Open;
-
-      if dmCadastro.cdsPesquisaPrestador.RecordCount < 1 then
-      begin
-        Application.MessageBox(
-        'Não foi encontrado nenhum visitante com a Unidade informada.',
-        'Atenção', MB_ICONWARNING);
-        Exit;
-      end;
-  end
   else if Form1.ComboBox1.ItemIndex = -1 then
     begin
       dmCadastro.qryPesquisaPrestador.SQL.Clear;
